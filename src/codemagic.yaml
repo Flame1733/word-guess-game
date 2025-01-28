@@ -1,0 +1,22 @@
+workflows:
+  web-app-workflow:
+    name: Web App Workflow
+    triggers:
+      - push:
+          branches:
+            - ci-cd-setup
+    steps:
+      - name: Install Dependencies
+        script: npm install
+      - name: Run Tests
+        script: npm test
+      - name: Build Project
+        script: npm run build
+      - name: Deploy to Firebase
+        script: |
+          npm install -g firebase-tools
+          firebase deploy --only hosting --token $FIREBASE_AUTH_TOKEN
+    publishing:
+      email_notification:
+        recipients:
+          - al-hattami@outlook.com
