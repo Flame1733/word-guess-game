@@ -1,10 +1,10 @@
 workflows:
   web-app-workflow:
     name: Web App Workflow
-    triggers:
-      - push:
-          branches:
-            - ci-cd-setup  # Ensure this matches the branch you are using
+    on:
+      push:
+        branches:
+          - ci-cd-setup # Ensure this matches the branch you are using
     scripts:
       - name: Install Dependencies
         script: npm install
