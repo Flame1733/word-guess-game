@@ -4,7 +4,7 @@ workflows:
     triggers:
       - push:
           branches:
-            - ci-cd-setup # Change this to your active branch if different
+            - ci-cd-setup # Change to your active branch if necessary
     scripts:
       - name: Install Dependencies
         script: npm install
