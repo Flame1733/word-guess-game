@@ -4,7 +4,7 @@ workflows:
     on:
       push:
         branches:
-          - "ci-cd-setup" # Ensure this matches your branch name
+          - "main"  # Ensure this matches your branch name
     scripts:
       - name: "Install Dependencies"
         script: "npm install"
