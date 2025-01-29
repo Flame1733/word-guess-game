@@ -30,8 +30,7 @@ workflows:
 
       email:
         recipients:
-          - astar716@gmail.com
-          - al-hattami@outlook.com
+          - kengyap@upm.edu.my
         notify:
           success: true
           failure: true
