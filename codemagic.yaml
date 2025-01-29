@@ -23,7 +23,7 @@ workflows:
           script: |
             firebase appdistribution:distribute --app 1:559732628127:web:845bbd360592c79895e0aa --groups token --token $FIREBASE_AUTH_TOKEN
 
-    notifications:
+    publishing:
       email:
         recipients:
-          - al-hattami@outlook.com
+      - name@example.com
