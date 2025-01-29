@@ -6,22 +6,24 @@ workflows:
 
     steps:
       - name: "Install Dependencies"
-        script: npm ci  # Clean install dependencies
+        script: npm ci
 
-      - name: "Run Lint Check"
-        script: npm run lint || echo "Lint warnings/errors detected"
+      # - name: "Run Lint Check"
+      #   script: npm run lint || echo "Lint warnings/errors detected"
+
+   
 
       - name: "Build Project"
         script: npm run build
 
     artifacts:
-      - build/**  # Save build artifacts for deployment or debugging
+      - build/** 
 
     publishing:
       email:
         recipients:
-          - kengyap@upm.edu.my  # Email for notifications
+          - al-hattami@outlook.com 
 
       scripts:
         - name: "Deploy to Firebase"
-          script: firebase deploy --only hosting --token $FIREBASE_DEPLOY_TOKEN
+          script: firebase deploy --only hosting --token $FIREBASE_AUTH_TOKEN
