@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "word-guess-game-b8ddf",
     "public": "build",
     "ignore": [
       "firebase.json",

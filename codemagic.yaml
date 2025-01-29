@@ -1,16 +1,30 @@
 workflows:
   react_build_and_deploy:
-    name: "React Build and Deploy"
+    name: "React Build and Beta Test Deploy"
     environment:
       node: "20"
+
     scripts:
       - name: "Install Dependencies"
-        script: "npm install"
+        script: "npm Install"  
       - name: "Build Project"
-        script: "npm run build"
+        script: "npm run build"  
+
+    cache:
+      paths:
+        - node_modules  
+
     artifacts:
-      - build/**
+      - build/** 
+
     publishing:
+      scripts:
+        - name: "Deploy to Firebase App Distribution"
+          script: |
+            firebase appdistribution:distribute --app 1:559732628127:web:845bbd360592c79895e0aa
+ --groups token --token $FIREBASE_AUTH_TOKEN
+
+    notifications:
       email:
         recipients:
-          - Al-hattami@outlook.com
+          - al-hattami@outlook.com
