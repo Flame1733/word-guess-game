@@ -19,13 +19,6 @@ workflows:
       - build/**
 
     publishing:
-      email:
-          recipients:
-            - Al-hattami@outlook.com
-          notify:
-            success: true
-            failure: true
-
       scripts:
         - name: "Deploy to Firebase Hosting"
           script: |
@@ -35,4 +28,10 @@ workflows:
             echo "🔥 Your app is live at: https://$FIREBASE_PROJECT.web.app"
             echo "🔥 Your app is live at: https://$FIREBASE_PROJECT.web.app" > deployment_url.txt
 
-      
+      email:
+        recipients:
+          - astar716@gmail.com
+          - al-hattami@outlook.com
+        notify:
+          success: true
+          failure: true
