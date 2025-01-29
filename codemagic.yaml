@@ -6,23 +6,22 @@ workflows:
 
     scripts:
       - name: "Install Dependencies"
-        script: "npm Install"  
+        script: "npm ci"  # Use npm ci for faster, reliable installs
       - name: "Build Project"
         script: "npm run build"  
 
-    cache:
-      paths:
-        - node_modules  
-
     artifacts:
-      - build/** 
+      - build/**  
 
     publishing:
       scripts:
         - name: "Deploy to Firebase App Distribution"
           script: |
-            firebase appdistribution:distribute --app 1:559732628127:web:845bbd360592c79895e0aa --groups token --token $FIREBASE_AUTH_TOKEN
-    publishing :
+            firebase appdistribution:distribute build/app-release.apk \
+              --app 1:559732628127:web:845bbd360592c79895e0aa \
+              --groups beta-testers \
+              --token $FIREBASE_AUTH_TOKEN
+
       email:
         recipients:
           - al-hattami@outlook.com
