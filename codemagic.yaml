@@ -1,21 +1,21 @@
 workflows:
   react_build_and_deploy:
-    name: React Build and Deploy
+    name: "React Build and Deploy"
     environment:
-      node: 20  # Specify Node.js version
-      npm: true # Enable npm
+      node: "20"  # Specify Node.js version as a string
 
     scripts:
-      - name: Install Dependencies
-        script: npm install
-      - name: Run Tests
-        script: npm test
-      - name: Build Project
-        script: npm run build
+      - name: "Install Dependencies"
+        script: "npm install"
+      - name: "Run Tests"
+        script: "npm test"
+      - name: "Build Project"
+        script: "npm run build"
 
     artifacts:
       - build/**
+
     publishing:
       firebase:
-        project_path: ./build  
-        token: $FIREBASE_AUTH_TOKEN
+        project_path: "./build"  # Path to the build folder
+        token: "${FIREBASE_AUTH_TOKEN}"  # Ensure the token is properly set in Codemagic
