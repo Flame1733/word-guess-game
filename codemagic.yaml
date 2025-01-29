@@ -10,7 +10,7 @@ workflows:
         script: "npm run build"
     artifacts:
       - build/**
-    notifications:
+    publishing:
       email:
         recipients:
           - Al-hattami@outlook.com
