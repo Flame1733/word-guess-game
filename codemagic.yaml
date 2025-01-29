@@ -11,14 +11,9 @@ workflows:
         script: "npm ci"
       - name: "Build Project"
         script: "npm run build"
-      - name: "Build Android APK"
-        script: |
-          cd android
-          ./gradlew assembleRelease
-          cd ..
 
     artifacts:
-      - android/app/build/outputs/apk/release/app-release.apk  
+      -  build/**
 
     publishing:
       scripts:
