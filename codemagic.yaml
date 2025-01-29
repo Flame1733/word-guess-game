@@ -18,9 +18,7 @@ workflows:
         - name: "Deploy to Firebase App Distribution"
           script: |
             firebase appdistribution:distribute build/app-release.apk \
-              --app 1:559732628127:web:845bbd360592c79895e0aa \
-              --groups beta-testers \
-              --token "$FIREBASE_AUTH_TOKEN"
+              --app 1:559732628127:web:845bbd360592c79895e0aa
 
       email:
         recipients:
