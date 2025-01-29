@@ -9,6 +9,12 @@ workflows:
         script: "npm install"
       - name: "Build Project"
         script: "npm run build"
-
+    cache:
+      paths:
+        - node_modules
     artifacts:
       - build/**
+      notifications:
+      email:
+        recipients:
+          - Al-hattami@outlook.com
