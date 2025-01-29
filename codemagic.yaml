@@ -6,7 +6,7 @@ workflows:
 
     steps:
       - name: "Install Dependencies"
-        script: "npm ci"
+        script: "npm install"
 
       # - name: "Run Lint Check"
       #   script: npm run lint || echo "Lint warnings/errors detected"
