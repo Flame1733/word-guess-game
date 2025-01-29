@@ -2,7 +2,7 @@ workflows:
   react_build_and_deploy:
     name: React Build and Deploy
     environment:
-      node: 16  # Specify Node.js version
+      node: 20  # Specify Node.js version
       npm: true # Enable npm
 
     scripts:
@@ -17,5 +17,5 @@ workflows:
       - build/**
     publishing:
       firebase:
-        project_path: build  
+        project_path: ./build  
         token: $FIREBASE_AUTH_TOKEN
