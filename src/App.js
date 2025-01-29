@@ -36,7 +36,7 @@ const App = () => {
 
     return (
         <div className="p-8">
-            <h1 className="text-3xl font-bold text-center mb-4">Word Guessing Game</h1>
+            <h1 className="text-3xl font-bold text-center mb-4">Word Guessing Game new update</h1>
             <FeedbackGrid guess={guess} word={word} />
             <GuessInput onGuess={handleGuess} word={word} />
 
