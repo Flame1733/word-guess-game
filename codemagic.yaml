@@ -30,7 +30,7 @@ workflows:
 
       email:
         recipients:
-          - "flame1733@gmail.com"
+          - "astar716@gmail.com"
         notify:
           success: true
           failure: true
