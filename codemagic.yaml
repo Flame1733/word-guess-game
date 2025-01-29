@@ -19,13 +19,13 @@ workflows:
       - build/**
 
     publishing:
-    email:
-        recipients:
-          - Al-hattami@outlook.com
-        notify:
-          success: true
-          failure: true
-          
+      email:
+          recipients:
+            - Al-hattami@outlook.com
+          notify:
+            success: true
+            failure: true
+
       scripts:
         - name: "Deploy to Firebase Hosting"
           script: |
