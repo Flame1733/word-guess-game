@@ -5,6 +5,8 @@ workflows:
       node: "20"
       groups:
         - beta-testers
+      vars:
+        FIREBASE_PROJECT: "word-guess-game-b8ddf"
 
     scripts:
       - name: "Install Dependencies"
@@ -20,9 +22,8 @@ workflows:
       scripts:
         - name: "Deploy to Firebase Hosting"
           script: |
-            npm install -g firebase-tools
-            firebase login:ci --token $FIREBASE_AUTH_TOKEN
-            firebase deploy --only hosting
+            echo "Skipping Firebase CLI installation since it already exists..."
+            firebase deploy --only hosting --token "$FIREBASE_AUTH_TOKEN" --project $FIREBASE_PROJECT
 
       email:
         recipients:
