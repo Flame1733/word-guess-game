@@ -2,28 +2,13 @@ workflows:
   react_build_and_deploy:
     name: "React Build and Deploy"
     environment:
-      node: "20"  
+      node: "20"
 
-    steps:
+    scripts:
       - name: "Install Dependencies"
         script: "npm install"
-
-      # - name: "Run Lint Check"
-      #   script: npm run lint || echo "Lint warnings/errors detected"
-
-   
-
       - name: "Build Project"
         script: "npm run build"
 
     artifacts:
-      - build/** 
-
-    publishing:
-      email:
-        recipients:
-          - al-hattami@outlook.com 
-
-      scripts:
-        - name: "Deploy to Firebase"
-          script: firebase deploy --only hosting --token $FIREBASE_AUTH_TOKEN
+      - build/**
