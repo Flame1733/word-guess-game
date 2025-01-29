@@ -2,11 +2,11 @@ workflows:
   react_build_and_deploy:
     name: "React Build and Deploy"
     environment:
-      node: "20"  # Specify Node.js version
+      node: "20"  
 
     steps:
       - name: "Install Dependencies"
-        script: npm ci
+        script: "npm ci"
 
       # - name: "Run Lint Check"
       #   script: npm run lint || echo "Lint warnings/errors detected"
@@ -14,7 +14,7 @@ workflows:
    
 
       - name: "Build Project"
-        script: npm run build
+        script: "npm run build"
 
     artifacts:
       - build/** 
