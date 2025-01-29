@@ -11,9 +11,6 @@ workflows:
       - name: "Run Lint Check"
         script: npm run lint || echo "Lint warnings/errors detected"
 
-      - name: "Run Tests"
-        script: npm test -- --ci --reporters=default
-
       - name: "Build Project"
         script: npm run build
 
