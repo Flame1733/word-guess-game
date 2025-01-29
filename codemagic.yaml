@@ -4,7 +4,7 @@ workflows:
     environment:
       node: "20"
       groups:
-        - beta-testers
+        -" beta-testers"
 
     scripts:
       - name: "Install Dependencies"
@@ -21,7 +21,7 @@ workflows:
           script: |
             firebase appdistribution:distribute build/app-release.apk \
               --app 1:559732628127:web:845bbd360592c79895e0aa \
-              --token "$FIREBASE_AUTH_TOKEN"
+              --value "$FIREBASE_AUTH_TOKEN"
 
       email:
         recipients:
