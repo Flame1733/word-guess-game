@@ -2,15 +2,32 @@ workflows:
   react_build_and_deploy:
     name: "React Build and Deploy"
     environment:
-      node: "20"  # Specify Node.js version as a string
-
+      node: "20"  
+    triggers:
+      - push:
+          branches:
+            - main 
     scripts:
       - name: "Install Dependencies"
-        script: "npm install"
+        script: |
+          npm ci  # Faster and ensures a clean install from package-lock.json
+      - name: "Run Lint Check"
+        script: |
+          npm run lint || echo "Lint errors detected"
       - name: "Build Project"
-        script: "npm run build"
-
+        script: |
+          npm run build  # Build the project
+    cache:
+      paths:
+        - node_modules  
     artifacts:
-      - build/**
-
-    
+      - build/** 
+    publishing:
+      scripts:
+        - name: "Deploy to Firebase"
+          script: |
+            firebase deploy --only hosting --token $FIREBASE_AUTH_TOKEN
+    notifications:
+      email:
+        recipients:
+          - Al-hattami@outlook.com
