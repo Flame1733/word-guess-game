@@ -15,7 +15,4 @@ workflows:
     artifacts:
       - build/**
 
-    publishing:
-      firebase:
-        project_path: "./build"  # Path to the build folder
-        token: "${FIREBASE_AUTH_TOKEN}"  # Ensure the token is properly set in Codemagic
+    
