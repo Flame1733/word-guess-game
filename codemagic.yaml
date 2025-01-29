@@ -24,6 +24,9 @@ workflows:
           script: |
             echo "Skipping Firebase CLI installation since it already exists..."
             firebase deploy --only hosting --token "$FIREBASE_AUTH_TOKEN" --project $FIREBASE_PROJECT
+            echo "✅ Deployment successful!"
+            echo "🔥 Your app is live at: https://$FIREBASE_PROJECT.web.app"
+            echo "🔥 Your app is live at: https://$FIREBASE_PROJECT.web.app" > deployment_url.txt
 
       email:
         recipients:
