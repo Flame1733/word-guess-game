@@ -31,6 +31,6 @@ workflows:
       email:
         recipients:
           - al-hattami@outlook.com
-        notify:
-          success: true
-          failure: true
+        notify: 
+          on_success: always 
+          on_failure: always
