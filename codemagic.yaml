@@ -3,8 +3,8 @@ workflows:
     name: "React Build and Beta Test Deploy"
     environment:
       node: "20"
-      # groups:
-      #   -"beta-testers"
+      groups:
+        - beta-testers
 
     scripts:
       - name: "Install Dependencies"
