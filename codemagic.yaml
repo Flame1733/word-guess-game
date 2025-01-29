@@ -21,7 +21,7 @@ workflows:
         - name: "Deploy to Firebase Hosting"
           script: |
             npm install -g firebase-tools
-            firebase login:ci --token $FIREBASE_TOKEN
+            firebase login:ci --token $FIREBASE_AUTH_TOKEN
             firebase deploy --only hosting
 
       email:
