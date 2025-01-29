@@ -3,20 +3,13 @@ workflows:
     name: "React Build and Deploy"
     environment:
       node: "20"
-
     scripts:
       - name: "Install Dependencies"
         script: "npm install"
       - name: "Build Project"
         script: "npm run build"
-
-    cache:
-      paths:
-        - node_modules
-
     artifacts:
       - build/**
-
     notifications:
       email:
         recipients:
