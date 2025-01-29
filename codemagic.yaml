@@ -22,8 +22,7 @@ workflows:
         - name: "Deploy to Firebase App Distribution"
           script: |
             firebase appdistribution:distribute --app 1:559732628127:web:845bbd360592c79895e0aa --groups token --token $FIREBASE_AUTH_TOKEN
-
-    publishing:
+    publishing :
       email:
         recipients:
-      - name@example.com
+          - al-hattami@outlook.com
