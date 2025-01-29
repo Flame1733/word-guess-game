@@ -31,14 +31,3 @@ workflows:
         notify:
           success: true
           failure: true
-        message: |
-          🎉 **Build Successful!** 🚀
-          
-          Your app is now live! You can access it here:
-          🔗 **https://word-guess-game-b8ddf.web.app**
-
-          ✅ Deployment Summary:
-          - Project: `word-guess-game-b8ddf`
-          - Build ID: ${CM_BUILD_ID}
-          - Workflow: ${CM_WORKFLOW_ID}
-          - Build Duration: ${CM_BUILD_DURATION}
