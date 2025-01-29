@@ -30,7 +30,7 @@ workflows:
 
       email:
         recipients:
-          - al-hattami@outlook.com
-        notify: 
-          on_success: always 
-          on_failure: always
+          - aa.70707@hotmail.com
+        notify:
+          success: true
+          failure: true
